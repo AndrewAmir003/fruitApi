@@ -54,7 +54,9 @@ const fruits = require("./fruits.json")
 const express = require("express")
 const app = express() // by convention server called app
 const port = process.env.PORT //using env file
+const cors = require("cors")
 
+app.use(cors()) // always need this two lines 
 app.use(express.json()) // by convention use goes before the get statements. Get is also middleware just without the next keyword.
 
 app.get('/', (req, res) => {
